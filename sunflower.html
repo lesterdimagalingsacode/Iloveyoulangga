@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Love for You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #ff9ff3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            max-width: 500px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            position: absolute;
+        }
+        .hidden {
+            opacity: 0;
+            transform: scale(0.7);
+            pointer-events: none;
+        }
+        .heart {
+            font-size: 4em;
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="firstCard">
+        <div class="heart">❤️</div>
+        <h1>You're My Everything</h1>
+        <p>On this Valentine's Day, I wanted to create something special just for you. 
+        Every line of code represents my love – precise, thoughtful, and dedicated to you.</p>
+        <p>Click to see more...</p>
+    </div>
+
+    <div class="card hidden" id="secondCard">
+        <div class="heart">💕</div>
+        <h1>Our Love Story</h1>
+        <p>From the moment we met, I knew you were something special. 
+        Every day with you is a beautiful adventure, filled with love, laughter, and endless possibilities.</p>
+        <p>I love you more than words can express.</p>
+    </div>
+
+    <script>
+        const firstCard = document.getElementById('firstCard');
+        const secondCard = document.getElementById('secondCard');
+
+        firstCard.addEventListener('click', function() {
+            firstCard.classList.add('hidden');
+            secondCard.classList.remove('hidden');
+        });
+
+        secondCard.addEventListener('click', function() {
+            secondCard.classList.add('hidden');
+            firstCard.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
